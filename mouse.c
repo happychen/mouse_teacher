@@ -34,6 +34,11 @@ int mouse_test(pinfo_t fb)
 			m_x += mevent.dx;
 			m_y += mevent.dy;
 
+            m_x = ((m_x < 0) ? 0 : m_x);
+            m_y = ((m_y < 0) ? 0 : m_y);
+            if(m_x > (fb->w - C_WIDTH)) m_x = fb->w - C_WIDTH;
+            if(m_y > (fb->h - C_HEIGHT)) m_y = fb->h - C_HEIGHT;
+
 			mouse_draw(fb, m_x, m_y);
 //			printf("mx=%d\tmy=%d\n", m_x, m_y);
 
