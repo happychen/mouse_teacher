@@ -37,6 +37,7 @@ int mouse_test(pinfo_t fb)
 			mouse_draw(fb, m_x, m_y);
 //			printf("mx=%d\tmy=%d\n", m_x, m_y);
 
+            /*
 			switch(mevent.button)
 			{
 				case 1:
@@ -54,9 +55,11 @@ int mouse_test(pinfo_t fb)
 				default:
 					break;
 			}
+            */
 		}
 		else
 			; //Error read mouse
+
 	} //while(1)
 
 	close(fd);
